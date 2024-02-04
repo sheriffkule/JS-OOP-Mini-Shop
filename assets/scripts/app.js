@@ -1,19 +1,31 @@
+class Product {
+    title = 'DEFAULT';
+    imageUrl;
+    description;
+    price;
+
+    constructor(title, image, desc, price) {
+        this.title = title;
+        this.imageUrl = image;
+        this.description = desc;
+        this.price = price;
+    }
+}
+
 const productList = {
     products: [
-        {
-            title: 'A Pillow',
-            imageUrl:
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWZ1SG02SGwRyuY3CDSlbR72g8cpRosEwpp2LiCfbbA&s',
-            price: 19.99,
-            description: 'A soft pillow.',
-        },
-        {
-            title: 'A Carpet',
-            imageUrl:
-                'https://cdn.salla.sa/EqRRD/srUEsGVXWXmdyNzyAd1JMLeUoAKZea4cYLA9dXkm.jpg',
-            price: 89.99,
-            description: 'A carpet that you might like - or not.',
-        },
+        new Product(
+            'A Pillow',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPWZ1SG02SGwRyuY3CDSlbR72g8cpRosEwpp2LiCfbbA&s',
+            'A soft pillow.',
+            19.99
+        ),
+        new Product(
+            'A Carpet',
+            'https://cdn.salla.sa/EqRRD/srUEsGVXWXmdyNzyAd1JMLeUoAKZea4cYLA9dXkm.jpg',
+            'A carpet that you might like - or not.',
+            89.99
+        ),
     ],
     render() {
         const renderHook = document.getElementById('app');
@@ -36,7 +48,7 @@ const productList = {
             prodList.append(prodEl);
         }
         renderHook.append(prodList);
-    }
+    },
 };
 
 productList.render();
